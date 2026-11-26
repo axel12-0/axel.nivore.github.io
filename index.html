@@ -173,17 +173,6 @@
 	<footer class="border-t border-white/10 px-6 py-6 text-center text-sm text-slate-500">
 		<p>© <span id="year"></span> [axel Nivore] — Portfolio [BTS SIO]</p>
 	</footer>
-	<script>
-		document.getElementById('year').textContent = new Date().getFullYear();
-
-		document.getElementById('contact-form').addEventListener('submit', (event) => {
-			event.preventDefault();
-			const form = event.currentTarget;
-			const formData = new FormData(form);
-			const subject = formData.get('subject');
-			const body = `Nom : ${formData.get('name')}\nE-mail : ${formData.get('email')}\n\n${formData.get('message')}`;
-			window.location.href = `mailto:nivore.axel@ltpdampierre.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-		});
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
