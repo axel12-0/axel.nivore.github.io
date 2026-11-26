@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Portfolio personnel : présentation, compétences, BTS SIO, expériences et veille technologique.">
+	<title>Portfolio | [axel Nom]</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						ink: '#101827',
+						accent: '#55e6c1',
+						panel: '#172235'
+					},
+					fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
+				}
+			}
+		}
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-ink font-sans text-slate-100 antialiased">
+	<header class="sticky top-0 z-10 border-b border-white/10 bg-ink/90 backdrop-blur">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Navigation principale">
+			<a href="#presentation" class="font-mono text-sm font-medium tracking-wide text-accent">&lt; portfolio /&gt;</a>
+			<div class="hidden gap-8 text-sm text-slate-300 md:flex">
+				<a class="transition hover:text-accent" href="#presentation">Présentation</a>
+				<a class="transition hover:text-accent" href="#competences">Compétences</a>
+				<a class="transition hover:text-accent" href="#formation">Formation</a>
+				<a class="transition hover:text-accent" href="#parcours">Parcours pro</a>
+				<a class="transition hover:text-accent" href="#contact">Contact</a>
+				<a class="transition hover:text-accent" href="#veille">Veille DPU</a>
+			</div>
+			<a href="#contact" class="rounded-lg border border-accent/50 px-4 py-2 text-sm text-accent transition hover:bg-accent hover:text-ink">Me contacter</a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="presentation" class="mx-auto grid min-h-[76vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_.8fr]">
+			<div>
+				<p class="mb-5 font-mono text-sm text-accent">01 / Présentation personnelle</p>
+				<h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl">[axel Nivore]<span class="text-accent">.</span></h1>
+				<p class="mt-5 text-xl text-slate-300">Étudiant en <span class="text-white">[BTS SIO]</span>, spécialité <span class="text-white">[option / domaine]</span></p>
+				<p class="mt-4 max-w-xl leading-7 text-slate-400">[Présentez-vous en quelques phrases : votre parcours, vos centres d’intérêt, vos qualités et votre projet professionnel.]</p>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<a href="#parcours" class="rounded-lg bg-accent px-5 py-3 font-semibold text-ink transition hover:bg-white">Voir mon parcours</a>
+					<a href="#competences" class="rounded-lg border border-white/20 px-5 py-3 font-semibold text-slate-200 transition hover:border-accent hover:text-accent">Mes compétences</a>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-white/10 bg-panel p-6 shadow-2xl shadow-black/20">
+				<div class="mb-5 flex items-center gap-2" aria-hidden="true"><span class="h-3 w-3 rounded-full bg-rose-400"></span><span class="h-3 w-3 rounded-full bg-amber-300"></span><span class="h-3 w-3 rounded-full bg-accent"></span><span class="ml-auto font-mono text-xs text-slate-500">profil.txt</span></div>
+				<div class="space-y-3 font-mono text-sm leading-6">
+					<p><span class="text-violet-300">localisation</span> <span class="text-slate-500">=</span> <span class="text-accent">"[Ville, région]"</span></p>
+					<p><span class="text-violet-300">intérêts</span> <span class="text-slate-500">=</span> <span class="text-accent">"[Vos domaines d’intérêt]"</span></p>
+					<p><span class="text-violet-300">objectif</span> <span class="text-slate-500">=</span> <span class="text-accent">"[Métier ou projet visé]"</span></p>
+					<p><span class="text-violet-300">disponibilité</span> <span class="text-slate-500">=</span> <span class="text-accent">"[Stage / alternance]"</span></p>
+				</div>
+			</div>
+		</section>
+
+		<section id="competences" class="mx-auto max-w-6xl px-6 py-20">
+			<p class="font-mono text-sm text-accent">02 / Savoir-faire</p>
+			<h2 class="mt-3 text-3xl font-bold">Descriptif des compétences</h2>
+			<p class="mt-3 text-slate-400">Présentez ce que vous savez faire, votre niveau et des exemples qui illustrent votre pratique.</p>
+			<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">[Compétence 1]</h3><p class="mt-3 leading-6 text-slate-400">[Décrivez les tâches maîtrisées, les outils utilisés et un exemple de réalisation.]</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : [À préciser]</p></article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">[Compétence 2]</h3><p class="mt-3 leading-6 text-slate-400">[Expliquez comment vous mobilisez cette compétence en cours, en stage ou en projet.]</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : [À préciser]</p></article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">[Compétence 3]</h3><p class="mt-3 leading-6 text-slate-400">[Ajoutez une troisième compétence et les éléments concrets qui la démontrent.]</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : [À préciser]</p></article>
+			</div>
+		</section>
+
+		<section id="formation" class="border-y border-white/10 bg-white/[0.02]">
+			<div class="mx-auto max-w-6xl px-6 py-20">
+				<p class="font-mono text-sm text-accent">03 / Formation actuelle</p>
+				<h2 class="mt-3 text-3xl font-bold">Descriptif de ma formation</h2>
+				<p class="mt-3 text-slate-400">Présentez votre formation actuelle, son contenu et les objectifs que vous poursuivez.</p>
+				<div class="mt-8 grid gap-5 md:grid-cols-2">
+					<article class="rounded-xl border border-white/10 bg-panel p-6">
+						<p class="font-mono text-xs text-accent">[ANNÉE / PÉRIODE]</p>
+						<h3 class="mt-3 text-xl font-semibold">[Nom du diplôme ou de la BTS SIO]</h3>
+						<p class="mt-3 leading-6 text-slate-400">[Établissement, ville et spécialité. Résumez les enseignements et les compétences abordés.]</p>
+					</article>
+					<article class="rounded-xl border border-white/10 bg-panel p-6">
+						<p class="font-mono text-xs text-accent">OBJECTIFS</p>
+						<h3 class="mt-3 text-xl font-semibold">Ce que je développe</h3>
+						<p class="mt-3 leading-6 text-slate-400">[Décrivez vos objectifs d’apprentissage, les matières ou projets marquants et la suite de votre parcours.]</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="parcours" class="mx-auto max-w-6xl px-6 py-20">
+			<p class="font-mono text-sm text-accent">04 / Expériences</p>
+			<h2 class="mt-3 text-3xl font-bold">Stage et parcours professionnel</h2>
+			<p class="mt-3 text-slate-400">Ajoutez vos stages, emplois et expériences, de la plus récente à la plus ancienne. Sans expérience, présentez ici vos projets significatifs.</p>
+			<div class="mt-8 grid gap-5 md:grid-cols-2">
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">[DATES] · [ENTREPRISE / ORGANISATION]</p>
+					<h3 class="mt-3 text-xl font-semibold">[Intitulé du stage ou du poste]</h3>
+					<p class="mt-3 leading-6 text-slate-400">[Décrivez le contexte, vos missions, les outils utilisés et les résultats obtenus.]</p>
+				</article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">DOCUMENT À CONSULTER</p>
+					<h3 class="mt-3 text-xl font-semibold">Portfolio de compétences</h3>
+					<p class="mt-3 leading-6 text-slate-400">Retrouvez le détail des compétences acquises et les situations qui les illustrent dans le document dédié.</p>
+					<a class="mt-5 inline-block rounded-lg border border-accent/50 px-4 py-2 text-sm text-accent transition hover:bg-accent hover:text-ink" href="documents/portfolio-competences.pdf">Consulter le portfolio de compétences</a>
+					<p class="mt-3 text-xs text-slate-500">Ajoutez votre PDF dans <code>documents/portfolio-competences.pdf</code> ou modifiez le lien.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="contact" class="border-y border-white/10 bg-white/[0.02]">
+			<div class="mx-auto max-w-3xl px-6 py-20">
+				<p class="font-mono text-sm text-accent">05 / Contact</p>
+				<h2 class="mt-3 text-3xl font-bold">Me contacter</h2>
+				<p class="mt-3 leading-7 text-slate-400">Une question, une proposition de stage ou envie d’échanger ? Envoyez-moi un message.</p>
+				<form id="contact-form" class="mt-8 space-y-5">
+					<div>
+						<label for="contact-name" class="mb-2 block text-sm font-medium text-slate-200">Nom</label>
+						<input id="contact-name" name="name" autocomplete="name" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Votre nom">
+					</div>
+					<div>
+						<label for="contact-email" class="mb-2 block text-sm font-medium text-slate-200">Adresse e-mail</label>
+						<input id="contact-email" name="email" type="email" autocomplete="email" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="vous@exemple.fr">
+					</div>
+					<div>
+						<label for="contact-subject" class="mb-2 block text-sm font-medium text-slate-200">Objet</label>
+						<input id="contact-subject" name="subject" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Objet de votre message">
+					</div>
+					<div>
+						<label for="contact-message" class="mb-2 block text-sm font-medium text-slate-200">Message</label>
+						<textarea id="contact-message" name="message" rows="5" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Votre message"></textarea>
+					</div>
+					<button type="submit" class="rounded-lg bg-accent px-5 py-3 font-semibold text-ink transition hover:bg-white">Préparer le message</button>
+				</form>
+				<p class="mt-5 text-sm text-slate-500">LinkedIn : <a class="text-slate-300 underline decoration-white/30 underline-offset-4 hover:text-accent" href="[https://www.linkedin.com/in/axel-nivore-a55388237/]">[LINKEDIN]</a> · GitHub : <a class="text-slate-300 underline decoration-white/30 underline-offset-4 hover:text-accent" href="[https://github.com/axel12-0]">[GITHUB]</a></p>
+			</div>
+		</section>
+
+		<section id="veille" class="mx-auto max-w-6xl px-6 py-20">comprendre le rôle des DPU.</p>
+				</article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<h3 class="font-semibold text-white">Démarche de veille</h3>
+					<ol class="mt-4 list-decimal space-y-2 pl-5 leading-6 text-slate-400">
+						<li>Consulter régulièrement la documentation technique des fabricants, les publications spécialisées et les ressources d’organismes de standardisation.</li>
+						<li>Vérifier la date, l’auteur, les sources et le contexte de chaque information, puis comparer plusieurs points de vue.</li>
+						<li>Résumer les nouveautés, noter leurs impacts et mettre à jour cette rubrique à chaque périod
+			<p class="font-mono text-sm text-accent">06 / Veille technologique</p>
+			<h2 class="mt-3 text-3xl font-bold">Les DPU (Data Processing Units)</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-400">Un DPU est un processeur spécialisé conçu pour prendre en charge certaines tâches d’infrastructure dans les centres de données. Cette veille suit l’évolution de ces unités et de leurs usages, en complément des CPU et GPU.</p>
+			<div class="mt-8 grid gap-5 md:grid-cols-2">
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<h3 class="font-semibold text-white">Périmètre de la veille</h3>
+					<ul class="mt-4 list-disc space-y-2 pl-5 leading-6 text-slate-400">
+						<li>Architecture et fonctions des DPU, notamment le déchargement des tâches réseau, stockage et sécurité.</li>
+						<li>Cas d’usage dans les centres de données, la virtualisation et les infrastructures cloud.</li>
+						<li>Écosystème, solutions et évolutions pertinentes pour l’administration des systèmes et réseaux.</li>
+						<li>Enjeux de sécurité, de performances, de consommation et d’intégration.</li>
+					</ul>
+					<p class="mt-4 text-sm text-slate-500">Hors périmètre : étude exhaustive des CPU et GPU, sauf comparaison ue de veille.</li>
+					</ol>
+					<p class="mt-4 text-sm text-slate-500">Rythme conseillé : une revue mensuelle, avec la date et les sources ajoutées à chaque mise à jour.</p>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-white/10 px-6 py-6 text-center text-sm text-slate-500">
+		<p>© <span id="year"></span> [axel Nivore] — Portfolio [BTS SIO]</p>
+	</footer>
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		document.getElementById('contact-form').addEventListener('submit', (event) => {
+			event.preventDefault();
+			const form = event.currentTarget;
+			const formData = new FormData(form);
+			const subject = formData.get('subject');
+			const body = `Nom : ${formData.get('name')}\nE-mail : ${formData.get('email')}\n\n${formData.get('message')}`;
+			window.location.href = `mailto:nivore.axel@ltpdampierre.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		});
+	</script>
+</body>
+</html>
