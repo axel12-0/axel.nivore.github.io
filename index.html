@@ -294,24 +294,27 @@
 					<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Me contacter</h2>
 					<p class="mt-3 leading-7 text-zinc-400">Une question, une proposition de stage ou envie d’échanger ? Envoyez-moi un message.</p>
 				</div>
-				<form id="contact-form" class="hud-card mt-8 space-y-5 p-6 sm:p-8">
+				<form id="contactForm" class="hud-card mt-8 space-y-5 p-6 sm:p-8">
 					<div>
-						<label for="contact-name" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">01 // Nom</label>
-						<input id="contact-name" name="name" autocomplete="name" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre nom">
+						<label for="nom" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">01 // Nom</label>
+						<input id="nom" name="name" autocomplete="name" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre nom">
 					</div>
 					<div>
-						<label for="contact-email" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">02 // Adresse e-mail</label>
-						<input id="contact-email" name="email" type="email" autocomplete="email" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="vous@exemple.fr">
+						<label for="email" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">02 // Adresse e-mail</label>
+						<input id="email" name="email" type="email" autocomplete="email" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="vous@exemple.fr">
 					</div>
 					<div>
-						<label for="contact-subject" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">03 // Objet</label>
-						<input id="contact-subject" name="subject" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Objet de votre message">
+						<label for="subject" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">03 // Objet</label>
+						<input id="subject" name="subject" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Objet de votre message">
 					</div>
 					<div>
-						<label for="contact-message" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">04 // Message</label>
-						<textarea id="contact-message" name="message" rows="5" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre message"></textarea>
+						<label for="message" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">04 // Message</label>
+						<textarea id="message" name="message" rows="5" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre message"></textarea>
 					</div>
-					<button type="submit" class="chamfer-sm bg-endfield px-6 py-3 font-mono text-xs font-bold tracking-widest text-ink uppercase transition hover:bg-white">Préparer le message →</button>
+					<div class="flex flex-wrap items-center gap-4">
+						<button type="submit" class="chamfer-sm bg-endfield px-6 py-3 font-mono text-xs font-bold tracking-widest text-ink uppercase transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50">Envoyer le message →</button>
+						<p id="statut" aria-live="polite" class="font-mono text-xs tracking-wider text-endfield"></p>
+					</div>
 				</form>
 				<p class="mt-5 font-mono text-xs tracking-wider text-zinc-500 uppercase">
 					UPLINK_LINKEDIN : <a class="text-zinc-200 underline decoration-endfield/50 underline-offset-4 transition hover:text-endfield" href="https://www.linkedin.com/in/axel-nivore-a55388237/" target="_blank" rel="noopener noreferrer">Axel Nivore</a>
@@ -435,6 +438,7 @@
 	<footer class="bg-ink px-6 py-6 text-center font-mono text-xs tracking-wider text-zinc-500 uppercase">
 		<p>© <span id="year">2026</span> AXEL NIVORE <span class="text-endfield">//</span> PORTFOLIO BTS SIO SISR</p>
 	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
