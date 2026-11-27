@@ -4,237 +4,436 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Portfolio d'Axel Nivore, étudiant en BTS SIO option SISR au Lycée Dampierre : présentation, compétences, formation, parcours et veille technologique.">
-	<title>Portfolio | Axel Nivore</title>
+	<title>Portfolio | Axel Nivore — BTS SIO SISR</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
 			theme: {
 				extend: {
 					colors: {
-						ink: '#101827',
-						accent: '#55e6c1',
-						panel: '#172235'
+						ink: '#0b0c0e',
+						panel: '#13161b',
+						surface: '#1a1e25',
+						endfield: '#ffe600',
+						steel: '#8f98a6'
 					},
-					fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
+					fontFamily: {
+						sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+						display: ['"Chakra Petch"', 'Inter', 'ui-sans-serif', 'system-ui'],
+						mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+					}
 				}
 			}
 		}
 	</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+	<style>
+		.bg-tac-grid {
+			background-color: #0b0c0e;
+			background-image:
+				linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+				linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+			background-size: 48px 48px;
+		}
+		.hazard-stripe {
+			background-image: repeating-linear-gradient(
+				-45deg,
+				#ffe600,
+				#ffe600 8px,
+				#0b0c0e 8px,
+				#0b0c0e 16px
+			);
+		}
+		.hazard-subtle {
+			background-image: repeating-linear-gradient(
+				-45deg,
+				rgba(255, 230, 0, 0.14),
+				rgba(255, 230, 0, 0.14) 6px,
+				transparent 6px,
+				transparent 12px
+			);
+		}
+		.chamfer {
+			clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+		}
+		.chamfer-sm {
+			clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+		}
+		.hud-card {
+			position: relative;
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			background: linear-gradient(180deg, rgba(24, 28, 35, 0.92) 0%, rgba(15, 18, 23, 0.96) 100%);
+			transition: border-color 0.2s ease, transform 0.2s ease;
+		}
+		.hud-card:hover {
+			border-color: rgba(255, 230, 0, 0.55);
+		}
+		.hud-card::before,
+		.hud-card::after {
+			content: "";
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			pointer-events: none;
+		}
+		.hud-card::before {
+			top: -1px;
+			left: -1px;
+			border-top: 2px solid #ffe600;
+			border-left: 2px solid #ffe600;
+		}
+		.hud-card::after {
+			right: -1px;
+			bottom: -1px;
+			border-right: 2px solid rgba(255, 230, 0, 0.5);
+			border-bottom: 2px solid rgba(255, 230, 0, 0.5);
+		}
+	</style>
 </head>
-<body class="bg-ink font-sans text-slate-100 antialiased">
-	<header class="sticky top-0 z-10 border-b border-white/10 bg-ink/90 backdrop-blur">
-		<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Navigation principale">
-			<a href="#presentation" class="font-mono text-sm font-medium tracking-wide text-accent">&lt; portfolio /&gt;</a>
-			<div class="hidden gap-8 text-sm text-slate-300 md:flex">
-				<a class="transition hover:text-accent" href="#presentation">Présentation</a>
-				<a class="transition hover:text-accent" href="#competences">Compétences</a>
-				<a class="transition hover:text-accent" href="#formation">Formation</a>
-				<a class="transition hover:text-accent" href="#parcours">Parcours pro</a>
-				<a class="transition hover:text-accent" href="#contact">Contact</a>
-				<a class="transition hover:text-accent" href="#veille">Veille hardware</a>
+<body class="bg-tac-grid font-sans text-zinc-100 antialiased selection:bg-endfield selection:text-ink">
+	<div class="h-1.5 w-full hazard-stripe" aria-hidden="true"></div>
+
+	<header class="sticky top-0 z-20 border-b border-white/15 bg-ink/90 backdrop-blur-md">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5" aria-label="Navigation principale">
+			<a href="#presentation" class="flex items-center gap-3 font-mono text-xs font-bold tracking-widest text-white uppercase">
+				<span class="inline-block h-2.5 w-2.5 bg-endfield"></span>
+				<span>AXEL.NIVORE <span class="text-endfield">//</span> SISR</span>
+			</a>
+			<div class="hidden items-center gap-7 font-mono text-xs tracking-wider text-zinc-400 uppercase md:flex">
+				<a class="transition hover:text-endfield" href="#presentation">01.Profil</a>
+				<a class="transition hover:text-endfield" href="#competences">02.Compétences</a>
+				<a class="transition hover:text-endfield" href="#formation">03.Formation</a>
+				<a class="transition hover:text-endfield" href="#parcours">04.Parcours</a>
+				<a class="transition hover:text-endfield" href="#contact">05.Contact</a>
+				<a class="transition hover:text-endfield" href="#veille">06.Veille</a>
 			</div>
-			<a href="#contact" class="rounded-lg border border-accent/50 px-4 py-2 text-sm text-accent transition hover:bg-accent hover:text-ink">Me contacter</a>
+			<a href="#contact" class="chamfer-sm bg-endfield px-4 py-2 font-mono text-xs font-bold tracking-wider text-ink uppercase transition hover:bg-white">Transmettre</a>
 		</nav>
 	</header>
 
 	<main>
-		<section id="presentation" class="mx-auto grid min-h-[76vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_.8fr]">
+		<section id="presentation" class="mx-auto grid min-h-[78vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_.8fr]">
 			<div>
-				<p class="mb-5 font-mono text-sm text-accent">01 / Présentation personnelle</p>
-				<h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl">Axel Nivore<span class="text-accent">.</span></h1>
-				<p class="mt-5 text-xl text-slate-300">Étudiant en <span class="text-white">BTS SIO</span>, spécialité <span class="text-white">SISR (Solutions d’Infrastructure, Systèmes et Réseaux)</span></p>
-				<p class="mt-4 max-w-xl leading-7 text-slate-400">Étudiant en BTS Services Informatiques aux Organisations au Lycée Dampierre à Valenciennes, je me spécialise dans l’administration des systèmes, les réseaux et la cybersécurité. Curieux, rigoureux et motivé par la pratique technique, je souhaite mettre mes compétences au service d’une équipe informatique lors d’un stage puis évoluer vers les métiers d’administrateur systèmes et réseaux.</p>
+				<div class="mb-5 inline-flex items-center gap-3 border border-white/15 bg-panel px-3 py-1.5 font-mono text-xs tracking-widest text-zinc-300 uppercase">
+					<span class="h-2 w-2 bg-endfield"></span>
+					<span>SYS_01 // PRÉSENTATION PERSONNELLE</span>
+				</div>
+				<h1 class="font-display text-5xl font-bold tracking-wider text-white uppercase sm:text-6xl">
+					Axel Nivore<span class="ml-1 inline-block h-10 w-3 align-baseline bg-endfield sm:h-12"></span>
+				</h1>
+				<p class="mt-5 font-display text-xl tracking-wide text-zinc-300">
+					Étudiant en <span class="bg-endfield px-2 py-0.5 font-mono text-base font-bold text-ink">BTS SIO</span>
+					<span class="ml-1 text-white">option SISR — Infrastructure, Systèmes &amp; Réseaux</span>
+				</p>
+				<p class="mt-5 max-w-xl border-l-2 border-endfield/70 pl-4 leading-7 text-zinc-400">
+					Étudiant en BTS Services Informatiques aux Organisations au Lycée Dampierre à Valenciennes, je me spécialise dans l’administration des systèmes, les réseaux et la cybersécurité. Curieux, rigoureux et motivé par la pratique technique, je souhaite mettre mes compétences au service d’une équipe informatique lors d’un stage puis évoluer vers les métiers d’administrateur systèmes et réseaux.
+				</p>
 				<div class="mt-8 flex flex-wrap gap-4">
-					<a href="#parcours" class="rounded-lg bg-accent px-5 py-3 font-semibold text-ink transition hover:bg-white">Voir mon parcours</a>
-					<a href="#competences" class="rounded-lg border border-white/20 px-5 py-3 font-semibold text-slate-200 transition hover:border-accent hover:text-accent">Mes compétences</a>
+					<a href="#parcours" class="chamfer-sm bg-endfield px-6 py-3 font-mono text-xs font-bold tracking-widest text-ink uppercase transition hover:bg-white">Voir mon parcours →</a>
+					<a href="#competences" class="chamfer-sm border border-white/25 bg-panel px-6 py-3 font-mono text-xs font-bold tracking-widest text-zinc-200 uppercase transition hover:border-endfield hover:text-endfield">Mes compétences</a>
 				</div>
 			</div>
-			<div class="rounded-2xl border border-white/10 bg-panel p-6 shadow-2xl shadow-black/20">
-				<div class="mb-5 flex items-center gap-2" aria-hidden="true"><span class="h-3 w-3 rounded-full bg-rose-400"></span><span class="h-3 w-3 rounded-full bg-amber-300"></span><span class="h-3 w-3 rounded-full bg-accent"></span><span class="ml-auto font-mono text-xs text-slate-500">profil.txt</span></div>
-				<div class="space-y-3 font-mono text-sm leading-6">
-					<p><span class="text-violet-300">localisation</span> <span class="text-slate-500">=</span> <span class="text-accent">"Valenciennes, Hauts-de-France"</span></p>
-					<p><span class="text-violet-300">intérêts</span> <span class="text-slate-500">=</span> <span class="text-accent">"Réseaux, cybersécurité, systèmes"</span></p>
-					<p><span class="text-violet-300">objectif</span> <span class="text-slate-500">=</span> <span class="text-accent">"Administrateur systèmes et réseaux"</span></p>
-					<p><span class="text-violet-300">disponibilité</span> <span class="text-slate-500">=</span> <span class="text-accent">"Recherche de stage (2026 – 2027)"</span></p>
+
+			<div class="hud-card p-6 shadow-2xl shadow-black/50">
+				<div class="mb-4 flex items-center justify-between border-b border-white/10 pb-3">
+					<div class="flex items-center gap-2">
+						<span class="h-2.5 w-2.5 bg-endfield"></span>
+						<span class="font-mono text-xs font-bold tracking-widest text-white uppercase">FICHE_OPÉRATEUR // PROFIL.TXT</span>
+					</div>
+					<span class="font-mono text-[11px] text-endfield">STATUS: ACTIF</span>
+				</div>
+				<div class="mb-5 h-2 w-full hazard-subtle border border-white/10" aria-hidden="true"></div>
+				<div class="space-y-3.5 font-mono text-xs leading-6 sm:text-sm">
+					<p class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-2">
+						<span class="text-zinc-500">LOCALISATION</span>
+						<span class="text-endfield">Valenciennes, Hauts-de-France</span>
+					</p>
+					<p class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-2">
+						<span class="text-zinc-500">DOMAINES</span>
+						<span class="text-zinc-100">Réseaux, cybersécurité, systèmes</span>
+					</p>
+					<p class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-2">
+						<span class="text-zinc-500">OBJECTIF</span>
+						<span class="text-zinc-100">Admin. systèmes &amp; réseaux</span>
+					</p>
+					<p class="flex flex-wrap justify-between gap-2">
+						<span class="text-zinc-500">DISPONIBILITÉ</span>
+						<span class="bg-endfield/15 px-2 py-0.5 text-endfield">Recherche de stage (2026 – 2027)</span>
+					</p>
+				</div>
+				<div class="mt-6 flex items-center justify-between border-t border-white/10 pt-3 font-mono text-[11px] text-zinc-500">
+					<span>UNIT // LYCÉE DAMPIERRE</span>
+					<span>NODE: 59300-VAL</span>
 				</div>
 			</div>
 		</section>
 
 		<section id="competences" class="mx-auto max-w-6xl px-6 py-20">
-			<p class="font-mono text-sm text-accent">02 / Savoir-faire</p>
-			<h2 class="mt-3 text-3xl font-bold">Descriptif des compétences</h2>
-			<p class="mt-3 text-slate-400">Compétences techniques développées dans le cadre du BTS SIO option SISR et à travers mes travaux pratiques.</p>
+			<div class="flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+				<div>
+					<p class="font-mono text-xs tracking-widest text-endfield uppercase">SEC_02 // SAVOIR-FAIRE TECHNIQUE</p>
+					<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Descriptif des compétences</h2>
+				</div>
+				<p class="max-w-md text-sm text-zinc-400">Compétences techniques développées dans le cadre du BTS SIO option SISR et à travers mes travaux pratiques.</p>
+			</div>
 			<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">Administration systèmes &amp; réseaux</h3><p class="mt-3 leading-6 text-slate-400">Installation et configuration de postes et serveurs (Linux, Windows), adressage IP, routage, services réseau et notions de virtualisation.</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : Intermédiaire</p></article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">Cybersécurité &amp; durcissement</h3><p class="mt-3 leading-6 text-slate-400">Application des bonnes pratiques de sécurité, analyse de vulnérabilités, robustesse des mots de passe et protection des accès aux infrastructures.</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : Intermédiaire</p></article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6"><h3 class="font-semibold text-white">Développement &amp; scripting</h3><p class="mt-3 leading-6 text-slate-400">Bases en programmation orientée objet (Java) et en développement web (HTML, Tailwind CSS, JavaScript) acquises en travaux dirigés et projets personnels.</p><p class="mt-4 font-mono text-xs text-accent">NIVEAU : Intermédiaire</p></article>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<div class="flex items-center justify-between font-mono text-[11px] text-zinc-500">
+							<span>MOD-01 // INFRA</span>
+							<span class="text-endfield">[SYS_NET]</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">Administration systèmes &amp; réseaux</h3>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Installation et configuration de postes et serveurs (Linux, Windows), adressage IP, routage, services réseau et notions de virtualisation.</p>
+					</div>
+					<div class="mt-5 border-t border-white/10 pt-3">
+						<span class="inline-block bg-endfield px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-ink uppercase">NIVEAU : INTERMÉDIAIRE</span>
+					</div>
+				</article>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<div class="flex items-center justify-between font-mono text-[11px] text-zinc-500">
+							<span>MOD-02 // CYBER</span>
+							<span class="text-endfield">[SEC_OPS]</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">Cybersécurité &amp; durcissement</h3>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Application des bonnes pratiques de sécurité, analyse de vulnérabilités, robustesse des mots de passe et protection des accès aux infrastructures.</p>
+					</div>
+					<div class="mt-5 border-t border-white/10 pt-3">
+						<span class="inline-block bg-endfield px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-ink uppercase">NIVEAU : INTERMÉDIAIRE</span>
+					</div>
+				</article>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<div class="flex items-center justify-between font-mono text-[11px] text-zinc-500">
+							<span>MOD-03 // CODE</span>
+							<span class="text-endfield">[DEV_AUTO]</span>
+						</div>
+						<h3 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">Développement &amp; scripting</h3>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Bases en programmation orientée objet (Java) et en développement web (HTML, Tailwind CSS, JavaScript) acquises en travaux dirigés et projets personnels.</p>
+					</div>
+					<div class="mt-5 border-t border-white/10 pt-3">
+						<span class="inline-block bg-endfield px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-ink uppercase">NIVEAU : INTERMÉDIAIRE</span>
+					</div>
+				</article>
 			</div>
 		</section>
 
-		<section id="formation" class="border-y border-white/10 bg-white/[0.02]">
+		<section id="formation" class="border-y border-white/10 bg-panel/60">
 			<div class="mx-auto max-w-6xl px-6 py-20">
-				<p class="font-mono text-sm text-accent">03 / Formation actuelle</p>
-				<h2 class="mt-3 text-3xl font-bold">Descriptif de ma formation</h2>
-				<p class="mt-3 text-slate-400">Parcours de formation supérieure orienté vers les infrastructures, les réseaux et les services informatiques.</p>
+				<div class="flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+					<div>
+						<p class="font-mono text-xs tracking-widest text-endfield uppercase">SEC_03 // CURSUS ACTUEL</p>
+						<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Descriptif de ma formation</h2>
+					</div>
+					<p class="max-w-md text-sm text-zinc-400">Parcours de formation supérieure orienté vers les infrastructures, les réseaux et les services informatiques.</p>
+				</div>
 				<div class="mt-8 grid gap-5 md:grid-cols-2">
-					<article class="rounded-xl border border-white/10 bg-panel p-6">
-						<p class="font-mono text-xs text-accent">2025 – 2027</p>
-						<h3 class="mt-3 text-xl font-semibold">BTS SIO — Option SISR</h3>
-						<p class="mt-3 leading-6 text-slate-400">Lycée Technique Privé Dampierre, Valenciennes. Solutions d’Infrastructure, Systèmes et Réseaux : administration système, architecture réseau, cybersécurité, support et gestion de parc informatique.</p>
+					<article class="hud-card p-6">
+						<div class="flex items-center justify-between">
+							<span class="bg-endfield/15 px-2.5 py-1 font-mono text-xs font-bold text-endfield">2025 – 2027</span>
+							<span class="font-mono text-[11px] text-zinc-500">BAC+2 // NIVEAU 5</span>
+						</div>
+						<h3 class="mt-4 font-display text-xl font-bold tracking-wide text-white uppercase">BTS SIO — Option SISR</h3>
+						<p class="mt-3 leading-6 text-zinc-400">Lycée Technique Privé Dampierre, Valenciennes. Solutions d’Infrastructure, Systèmes et Réseaux : administration système, architecture réseau, cybersécurité, support et gestion de parc informatique.</p>
 					</article>
-					<article class="rounded-xl border border-white/10 bg-panel p-6">
-						<p class="font-mono text-xs text-accent">OBJECTIFS</p>
-						<h3 class="mt-3 text-xl font-semibold">Ce que je développe</h3>
-						<p class="mt-3 leading-6 text-slate-400">Renforcer mes compétences en administration d’infrastructures, sécurisation des réseaux et automatisation, tout en assurant une veille technologique active sur les évolutions hardware liées à l’IA (dont les DPU) en vue de mon stage et d’une insertion professionnelle en systèmes et réseaux.</p>
+					<article class="hud-card p-6">
+						<div class="flex items-center justify-between">
+							<span class="border border-endfield/40 px-2.5 py-1 font-mono text-xs font-bold text-endfield">OBJECTIFS</span>
+							<span class="font-mono text-[11px] text-zinc-500">PROGRESSION // SISR</span>
+						</div>
+						<h3 class="mt-4 font-display text-xl font-bold tracking-wide text-white uppercase">Ce que je développe</h3>
+						<p class="mt-3 leading-6 text-zinc-400">Renforcer mes compétences en administration d’infrastructures, sécurisation des réseaux et automatisation, tout en assurant une veille technologique active sur les évolutions hardware liées à l’IA (dont les DPU) en vue de mon stage et d’une insertion professionnelle en systèmes et réseaux.</p>
 					</article>
 				</div>
 			</div>
 		</section>
 
 		<section id="parcours" class="mx-auto max-w-6xl px-6 py-20">
-			<p class="font-mono text-sm text-accent">04 / Expériences</p>
-			<h2 class="mt-3 text-3xl font-bold">Stage et parcours professionnel</h2>
-			<p class="mt-3 text-slate-400">Expériences en entreprise, de la plus récente à la plus ancienne, et accès à mon portfolio de compétences BTS SIO.</p>
+			<div class="flex flex-wrap items-end justify-between gap-4 border-b border-white/10 pb-6">
+				<div>
+					<p class="font-mono text-xs tracking-widest text-endfield uppercase">SEC_04 // OPÉRATIONS &amp; TERRAIN</p>
+					<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Stage et parcours professionnel</h2>
+				</div>
+				<p class="max-w-md text-sm text-zinc-400">Expériences en entreprise, de la plus récente à la plus ancienne, et accès à mon portfolio de compétences BTS SIO.</p>
+			</div>
 			<div class="mt-8 grid gap-5 md:grid-cols-2">
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">[DATES DU STAGE] · [ENTREPRISE / ORGANISATION]</p>
-					<h3 class="mt-3 text-xl font-semibold">Stage BTS SIO — Option SISR (à venir)</h3>
-					<ul class="mt-3 list-disc space-y-1.5 pl-5 leading-6 text-slate-400">
-						<li><span class="text-slate-200">Contexte :</span> [Présentation rapide de la structure et du service IT]</li>
-						<li><span class="text-slate-200">Missions :</span> [Tâches réalisées en systèmes, réseaux, support ou sécurité]</li>
-						<li><span class="text-slate-200">Outils &amp; résultats :</span> [Technologies utilisées et apports du stage]</li>
+				<article class="hud-card p-6">
+					<p class="font-mono text-xs tracking-wider text-endfield">[DATES DU STAGE] · [ENTREPRISE / ORGANISATION]</p>
+					<h3 class="mt-3 font-display text-xl font-bold tracking-wide text-white uppercase">Stage BTS SIO — Option SISR (à venir)</h3>
+					<ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-400">
+						<li><span class="font-medium text-zinc-200">Contexte :</span> [Présentation rapide de la structure et du service IT]</li>
+						<li><span class="font-medium text-zinc-200">Missions :</span> [Tâches réalisées en systèmes, réseaux, support ou sécurité]</li>
+						<li><span class="font-medium text-zinc-200">Outils &amp; résultats :</span> [Technologies utilisées et apports du stage]</li>
 					</ul>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">2019 (2 DERNIÈRES SEMAINES DE COURS) · AXA WEBCENTER</p>
-					<h3 class="mt-3 text-xl font-semibold">Stage d’observation de 3e</h3>
-					<p class="mt-3 leading-6 text-slate-400">Stage de découverte du monde professionnel effectué au sein d’AXA Webcenter durant les deux dernières semaines de cours de l’année scolaire 2019. Observation du fonctionnement de l’entreprise, de l’organisation des équipes et des outils numériques utilisés au quotidien.</p>
+				<article class="hud-card p-6">
+					<p class="font-mono text-xs tracking-wider text-endfield">2019 (2 DERNIÈRES SEMAINES DE COURS) · AXA WEBCENTER</p>
+					<h3 class="mt-3 font-display text-xl font-bold tracking-wide text-white uppercase">Stage d’observation de 3e</h3>
+					<p class="mt-4 text-sm leading-6 text-zinc-400">Stage de découverte du monde professionnel effectué au sein d’AXA Webcenter durant les deux dernières semaines de cours de l’année scolaire 2019. Observation du fonctionnement de l’entreprise, de l’organisation des équipes et des outils numériques utilisés au quotidien.</p>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6 md:col-span-2">
-					<p class="font-mono text-xs text-accent">DOCUMENT À CONSULTER</p>
-					<h3 class="mt-3 text-xl font-semibold">Portfolio de compétences</h3>
-					<p class="mt-3 leading-6 text-slate-400">Retrouvez le détail des compétences acquises et les situations qui les illustrent dans le document dédié.</p>
-					<a class="mt-5 inline-block rounded-lg border border-accent/50 px-4 py-2 text-sm text-accent transition hover:bg-accent hover:text-ink" href="documents/CV_Axel_Nivore_v2.pdf">Consulter le portfolio de compétences</a>
+				<article class="hud-card p-6 md:col-span-2">
+					<div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+						<div>
+							<p class="font-mono text-xs tracking-wider text-endfield">ARCHIVE // DOCUMENT À CONSULTER</p>
+							<h3 class="mt-2 font-display text-xl font-bold tracking-wide text-white uppercase">Portfolio de compétences</h3>
+							<p class="mt-2 max-w-2xl text-sm leading-6 text-zinc-400">Retrouvez le détail des compétences acquises et les situations qui les illustrent dans le document dédié.</p>
+						</div>
+						<a class="chamfer-sm shrink-0 bg-endfield px-5 py-3 text-center font-mono text-xs font-bold tracking-widest text-ink uppercase transition hover:bg-white" href="documents/CV_Axel_Nivore_v2.pdf">Ouvrir le dossier PDF →</a>
+					</div>
 				</article>
 			</div>
 		</section>
 
-		<section id="contact" class="border-y border-white/10 bg-white/[0.02]">
+		<section id="contact" class="border-y border-white/10 bg-panel/60">
 			<div class="mx-auto max-w-3xl px-6 py-20">
-				<p class="font-mono text-sm text-accent">05 / Contact</p>
-				<h2 class="mt-3 text-3xl font-bold">Me contacter</h2>
-				<p class="mt-3 leading-7 text-slate-400">Une question, une proposition de stage ou envie d’échanger ? Envoyez-moi un message.</p>
-				<form id="contact-form" class="mt-8 space-y-5">
+				<div class="border-b border-white/10 pb-6">
+					<p class="font-mono text-xs tracking-widest text-endfield uppercase">SEC_05 // TERMINAL DE TRANSMISSION</p>
+					<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Me contacter</h2>
+					<p class="mt-3 leading-7 text-zinc-400">Une question, une proposition de stage ou envie d’échanger ? Envoyez-moi un message.</p>
+				</div>
+				<form id="contact-form" class="hud-card mt-8 space-y-5 p-6 sm:p-8">
 					<div>
-						<label for="contact-name" class="mb-2 block text-sm font-medium text-slate-200">Nom</label>
-						<input id="contact-name" name="name" autocomplete="name" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Votre nom">
+						<label for="contact-name" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">01 // Nom</label>
+						<input id="contact-name" name="name" autocomplete="name" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre nom">
 					</div>
 					<div>
-						<label for="contact-email" class="mb-2 block text-sm font-medium text-slate-200">Adresse e-mail</label>
-						<input id="contact-email" name="email" type="email" autocomplete="email" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="vous@exemple.fr">
+						<label for="contact-email" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">02 // Adresse e-mail</label>
+						<input id="contact-email" name="email" type="email" autocomplete="email" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="vous@exemple.fr">
 					</div>
 					<div>
-						<label for="contact-subject" class="mb-2 block text-sm font-medium text-slate-200">Objet</label>
-						<input id="contact-subject" name="subject" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Objet de votre message">
+						<label for="contact-subject" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">03 // Objet</label>
+						<input id="contact-subject" name="subject" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Objet de votre message">
 					</div>
 					<div>
-						<label for="contact-message" class="mb-2 block text-sm font-medium text-slate-200">Message</label>
-						<textarea id="contact-message" name="message" rows="5" required class="w-full rounded-lg border border-white/15 bg-panel px-4 py-3 text-white outline-none transition focus:border-accent" placeholder="Votre message"></textarea>
+						<label for="contact-message" class="mb-2 block font-mono text-xs tracking-wider text-zinc-300 uppercase">04 // Message</label>
+						<textarea id="contact-message" name="message" rows="5" required class="w-full border border-white/15 bg-ink px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-endfield" placeholder="Votre message"></textarea>
 					</div>
-					<button type="submit" class="rounded-lg bg-accent px-5 py-3 font-semibold text-ink transition hover:bg-white">Préparer le message</button>
+					<button type="submit" class="chamfer-sm bg-endfield px-6 py-3 font-mono text-xs font-bold tracking-widest text-ink uppercase transition hover:bg-white">Préparer le message →</button>
 				</form>
-				<p class="mt-5 text-sm text-slate-500">LinkedIn : <a class="text-slate-300 underline decoration-white/30 underline-offset-4 hover:text-accent" href="https://www.linkedin.com/in/axel-nivore-a55388237/" target="_blank" rel="noopener noreferrer">Axel Nivore</a> · GitHub : <a class="text-slate-300 underline decoration-white/30 underline-offset-4 hover:text-accent" href="https://github.com/axel12-0" target="_blank" rel="noopener noreferrer">axel12-0</a></p>
+				<p class="mt-5 font-mono text-xs tracking-wider text-zinc-500 uppercase">
+					UPLINK_LINKEDIN : <a class="text-zinc-200 underline decoration-endfield/50 underline-offset-4 transition hover:text-endfield" href="https://www.linkedin.com/in/axel-nivore-a55388237/" target="_blank" rel="noopener noreferrer">Axel Nivore</a>
+					<span class="mx-2 text-zinc-700">//</span>
+					UPLINK_GITHUB : <a class="text-zinc-200 underline decoration-endfield/50 underline-offset-4 transition hover:text-endfield" href="https://github.com/axel12-0" target="_blank" rel="noopener noreferrer">axel12-0</a>
+				</p>
 			</div>
 		</section>
 
 		<section id="veille" class="mx-auto max-w-6xl px-6 py-20">
-			<p class="font-mono text-sm text-accent">06 / Veille technologique</p>
-			<h2 class="mt-3 text-3xl font-bold">Évolutions hardware liées à l’IA</h2>
-			<p class="mt-4 max-w-3xl leading-7 text-slate-400">L’essor de l’intelligence artificielle transforme en profondeur l’architecture matérielle des serveurs et des centres de données. Cette veille suit les évolutions des accélérateurs, de la mémoire, des interconnexions et du déchargement réseau via les DPU, avec une attention particulière aux impacts sur les infrastructures systèmes et réseaux (SISR).</p>
+			<div class="border-b border-white/10 pb-6">
+				<p class="font-mono text-xs tracking-widest text-endfield uppercase">SEC_06 // VEILLE TECHNOLOGIQUE</p>
+				<h2 class="mt-2 font-display text-3xl font-bold tracking-wide text-white uppercase sm:text-4xl">Évolutions hardware liées à l’IA</h2>
+				<p class="mt-4 max-w-3xl leading-7 text-zinc-400">L’essor de l’intelligence artificielle transforme en profondeur l’architecture matérielle des serveurs et des centres de données. Cette veille suit les évolutions des accélérateurs, de la mémoire, des interconnexions et du déchargement réseau via les DPU, avec une attention particulière aux impacts sur les infrastructures systèmes et réseaux (SISR).</p>
+			</div>
+
 			<div class="mt-8 grid gap-5 md:grid-cols-2">
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<h3 class="font-semibold text-white">Périmètre de la veille</h3>
-					<ul class="mt-4 list-disc space-y-2 pl-5 leading-6 text-slate-400">
+				<article class="hud-card p-6">
+					<p class="font-mono text-[11px] tracking-widest text-endfield uppercase">PARAM // SCOPE</p>
+					<h3 class="mt-2 font-display text-lg font-bold tracking-wide text-white uppercase">Périmètre de la veille</h3>
+					<ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-zinc-400">
 						<li>Évolution des unités de traitement spécialisées (GPU, NPU, ASIC d’inférence) et intégration à l’échelle du rack.</li>
 						<li>Déchargement réseau, stockage et sécurité via les DPU (Data Processing Units) dans les infrastructures IA.</li>
 						<li>Mémoire à large bande passante (HBM) et nouveaux standards d’interconnexion haut débit ou optiques.</li>
 						<li>Contraintes d’exploitation en datacenter : alimentation haute densité, refroidissement liquide et supervision.</li>
 					</ul>
-					<p class="mt-4 text-sm text-slate-500">Hors périmètre : conception mathématique des modèles d’IA et développement algorithmique pur.</p>
+					<p class="mt-4 border-t border-white/10 pt-3 font-mono text-xs text-zinc-500">HORS PÉRIMÈTRE : conception mathématique des modèles d’IA et développement algorithmique pur.</p>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<h3 class="font-semibold text-white">Démarche de veille</h3>
-					<ol class="mt-4 list-decimal space-y-2 pl-5 leading-6 text-slate-400">
+				<article class="hud-card p-6">
+					<p class="font-mono text-[11px] tracking-widest text-endfield uppercase">PROTOCOL // MÉTHODE</p>
+					<h3 class="mt-2 font-display text-lg font-bold tracking-wide text-white uppercase">Démarche de veille</h3>
+					<ol class="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-zinc-400">
 						<li>Suivre la documentation des constructeurs (NVIDIA, AMD, SK hynix, Broadcom), les consortiums techniques (UALink, OCP) et la presse spécialisée.</li>
 						<li>Vérifier la date, la fiabilité des sources et croiser les annonces techniques avant synthèse.</li>
 						<li>Rédiger des fiches thématiques orientées architecture matérielle et impact pour l’administration systèmes et réseaux.</li>
 					</ol>
-					<p class="mt-4 text-sm text-slate-500">Rythme de suivi : revue mensuelle avec ajout ou actualisation des articles par thématique.</p>
+					<p class="mt-4 border-t border-white/10 pt-3 font-mono text-xs text-zinc-500">RYTHME : revue mensuelle avec ajout ou actualisation des articles par thématique.</p>
 				</article>
 			</div>
 
-			<h3 class="mt-12 text-xl font-semibold text-white">Articles de veille</h3>
+			<div class="mt-12 flex items-center gap-3">
+				<span class="h-3 w-1.5 bg-endfield"></span>
+				<h3 class="font-display text-xl font-bold tracking-wider text-white uppercase">Articles de veille // Database</h3>
+			</div>
 			<div class="mt-5 grid gap-5 md:grid-cols-2">
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">ARTICLE 01 · DPU &amp; RÉSEAU IA</p>
-					<h4 class="mt-3 text-lg font-semibold text-white">Les DPU (Data Processing Units) : décharger l’infrastructure des clusters IA</h4>
-					<p class="mt-3 leading-6 text-slate-400">Un DPU est un processeur dédié qui prend en charge le réseau, le stockage, la télémétrie et le chiffrement à la place du CPU hôte. Avec les générations récentes comme NVIDIA BlueField-4 (jusqu’à 800 Gb/s avec ConnectX-9), le DPU assure aussi l’isolation matérielle Zero Trust et le partage rapide des caches de contexte (KV cache) sans saturer les nœuds de calcul.</p>
-					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> séparation nette entre calcul applicatif et plan de contrôle réseau/sécurité hors de l’OS hôte.</p>
-					<p class="mt-3 text-xs text-slate-500">Sources : NVIDIA, Red Hat, documentation architecture BlueField (2025–2026).</p>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<p class="font-mono text-xs tracking-wider text-endfield">LOG-01 // DPU &amp; RÉSEAU IA</p>
+						<h4 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">Les DPU (Data Processing Units) : décharger l’infrastructure des clusters IA</h4>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Un DPU est un processeur dédié qui prend en charge le réseau, le stockage, la télémétrie et le chiffrement à la place du CPU hôte. Avec les générations récentes comme NVIDIA BlueField-4 (jusqu’à 800 Gb/s avec ConnectX-9), le DPU assure aussi l’isolation matérielle Zero Trust et le partage rapide des caches de contexte (KV cache) sans saturer les nœuds de calcul.</p>
+					</div>
+					<div class="mt-4 border-t border-white/10 pt-3">
+						<p class="text-sm text-zinc-200"><span class="mr-2 bg-endfield px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink">IMPACT SISR</span>séparation nette entre calcul applicatif et plan de contrôle réseau/sécurité hors de l’OS hôte.</p>
+						<p class="mt-2 font-mono text-[11px] text-zinc-500">SOURCES : NVIDIA, Red Hat, documentation architecture BlueField (2025–2026).</p>
+					</div>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">ARTICLE 02 · MÉMOIRE HAUTE BANDE PASSANTE</p>
-					<h4 class="mt-3 text-lg font-semibold text-white">HBM4 : dépasser le mur de la mémoire pour les modèles d’IA</h4>
-					<p class="mt-3 leading-6 text-slate-400">Pour l’entraînement et l’inférence des grands modèles de langage, la bande passante mémoire devient plus critique que la puissance brute de calcul. La mémoire HBM4 (portée notamment par SK hynix) double la largeur d’interface de 1 024 à 2 048 bits par pile et intègre des puces de base personnalisées afin d’accélérer les échanges tout en maîtrisant la dissipation thermique.</p>
-					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> serveurs IA plus denses nécessitant une gestion fine du dimensionnement mémoire et thermique.</p>
-					<p class="mt-3 text-xs text-slate-500">Sources : SK hynix, TrendForce, publications techniques HBM4 (2025–2026).</p>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<p class="font-mono text-xs tracking-wider text-endfield">LOG-02 // MÉMOIRE HAUTE BANDE PASSANTE</p>
+						<h4 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">HBM4 : dépasser le mur de la mémoire pour les modèles d’IA</h4>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Pour l’entraînement et l’inférence des grands modèles de langage, la bande passante mémoire devient plus critique que la puissance brute de calcul. La mémoire HBM4 (portée notamment par SK hynix) double la largeur d’interface de 1 024 à 2 048 bits par pile et intègre des puces de base personnalisées afin d’accélérer les échanges tout en maîtrisant la dissipation thermique.</p>
+					</div>
+					<div class="mt-4 border-t border-white/10 pt-3">
+						<p class="text-sm text-zinc-200"><span class="mr-2 bg-endfield px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink">IMPACT SISR</span>serveurs IA plus denses nécessitant une gestion fine du dimensionnement mémoire et thermique.</p>
+						<p class="mt-2 font-mono text-[11px] text-zinc-500">SOURCES : SK hynix, TrendForce, publications techniques HBM4 (2025–2026).</p>
+					</div>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">ARTICLE 03 · INTERCONNEXIONS &amp; OPTIQUE</p>
-					<h4 class="mt-3 text-lg font-semibold text-white">UALink et Co-Packaged Optics (CPO) face aux limites du cuivre</h4>
-					<p class="mt-3 leading-6 text-slate-400">À des débits multi-térabits par seconde, les liaisons en cuivre atteignent leurs limites physiques sur de très courtes distances. L’écosystème évolue vers des standards ouverts d’interconnexion entre accélérateurs (UALink 1.0 puis 2.0) et vers le Co-Packaged Optics (CPO), qui rapproche l’optique des commutateurs afin de réduire la latence et la consommation énergétique par bit.</p>
-					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> évolution des architectures réseau Scale-Up/Scale-Out et généralisation de la fibre optique haute densité.</p>
-					<p class="mt-3 text-xs text-slate-500">Sources : UALink Consortium, Broadcom, SemiEngineering (2025–2026).</p>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<p class="font-mono text-xs tracking-wider text-endfield">LOG-03 // INTERCONNEXIONS &amp; OPTIQUE</p>
+						<h4 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">UALink et Co-Packaged Optics (CPO) face aux limites du cuivre</h4>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">À des débits multi-térabits par seconde, les liaisons en cuivre atteignent leurs limites physiques sur de très courtes distances. L’écosystème évolue vers des standards ouverts d’interconnexion entre accélérateurs (UALink 1.0 puis 2.0) et vers le Co-Packaged Optics (CPO), qui rapproche l’optique des commutateurs afin de réduire la latence et la consommation énergétique par bit.</p>
+					</div>
+					<div class="mt-4 border-t border-white/10 pt-3">
+						<p class="text-sm text-zinc-200"><span class="mr-2 bg-endfield px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink">IMPACT SISR</span>évolution des architectures réseau Scale-Up/Scale-Out et généralisation de la fibre optique haute densité.</p>
+						<p class="mt-2 font-mono text-[11px] text-zinc-500">SOURCES : UALink Consortium, Broadcom, SemiEngineering (2025–2026).</p>
+					</div>
 				</article>
-				<article class="rounded-xl border border-white/10 bg-panel p-6">
-					<p class="font-mono text-xs text-accent">ARTICLE 04 · DATACENTER &amp; ÉNERGIE</p>
-					<h4 class="mt-3 text-lg font-semibold text-white">Racks intégrés IA, alimentation verticale et refroidissement liquide</h4>
-					<p class="mt-3 leading-6 text-slate-400">Le matériel IA passe de cartes individuelles à des baies complètes fortement intégrées (GPU, CPU et ASIC/NPU spécialisés en inférence). Cette concentration électrique impose de nouvelles architectures d’alimentation et le recours au refroidissement liquide direct (Direct Liquid Cooling) pour maintenir la stabilité des clusters en production.</p>
-					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> transformation de l’hébergement en salle serveur (PUE, distribution électrique et supervision thermique).</p>
-					<p class="mt-3 text-xs text-slate-500">Sources : Data Center Knowledge, SemiEngineering (2025–2026).</p>
+				<article class="hud-card flex flex-col justify-between p-6">
+					<div>
+						<p class="font-mono text-xs tracking-wider text-endfield">LOG-04 // DATACENTER &amp; ÉNERGIE</p>
+						<h4 class="mt-3 font-display text-lg font-bold tracking-wide text-white uppercase">Racks intégrés IA, alimentation verticale et refroidissement liquide</h4>
+						<p class="mt-3 text-sm leading-6 text-zinc-400">Le matériel IA passe de cartes individuelles à des baies complètes fortement intégrées (GPU, CPU et ASIC/NPU spécialisés en inférence). Cette concentration électrique impose de nouvelles architectures d’alimentation et le recours au refroidissement liquide direct (Direct Liquid Cooling) pour maintenir la stabilité des clusters en production.</p>
+					</div>
+					<div class="mt-4 border-t border-white/10 pt-3">
+						<p class="text-sm text-zinc-200"><span class="mr-2 bg-endfield px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink">IMPACT SISR</span>transformation de l’hébergement en salle serveur (PUE, distribution électrique et supervision thermique).</p>
+						<p class="mt-2 font-mono text-[11px] text-zinc-500">SOURCES : Data Center Knowledge, SemiEngineering (2025–2026).</p>
+					</div>
 				</article>
 			</div>
 
-			<article class="mt-8 rounded-xl border border-accent/30 bg-panel p-6">
-				<p class="font-mono text-xs text-accent">BTS SIO · OPTION SISR</p>
-				<h3 class="mt-3 text-xl font-semibold text-white">Lien avec le BTS SIO SISR</h3>
-				<p class="mt-3 leading-6 text-slate-400">L’évolution du matériel dédié à l’IA ne concerne pas uniquement la recherche ou le développement logiciel : elle redéfinit directement le travail des techniciens et administrateurs d’infrastructures formés en BTS SIO option SISR, à travers les trois blocs de compétences du référentiel.</p>
-				<div class="mt-5 grid gap-4 md:grid-cols-3">
-					<div class="rounded-lg border border-white/10 bg-ink/50 p-4">
-						<p class="font-mono text-xs text-accent">BLOC 1</p>
-						<h4 class="mt-2 font-semibold text-white">Support et mise à disposition de services informatiques</h4>
-						<p class="mt-2 text-sm leading-6 text-slate-400">Anticiper les exigences matérielles (mémoire HBM, densité électrique, refroidissement liquide) pour dimensionner les serveurs et garantir la continuité des services.</p>
+			<article class="mt-8 border border-endfield/40 bg-panel p-6 sm:p-8">
+				<div class="flex flex-wrap items-center justify-between gap-2">
+					<span class="bg-endfield px-2.5 py-1 font-mono text-xs font-bold tracking-wider text-ink uppercase">BTS SIO // OPTION SISR</span>
+					<span class="font-mono text-xs text-zinc-500">ALIGNEMENT RÉFÉRENTIEL</span>
+				</div>
+				<h3 class="mt-4 font-display text-2xl font-bold tracking-wide text-white uppercase">Lien avec le BTS SIO SISR</h3>
+				<p class="mt-3 leading-6 text-zinc-400">L’évolution du matériel dédié à l’IA ne concerne pas uniquement la recherche ou le développement logiciel : elle redéfinit directement le travail des techniciens et administrateurs d’infrastructures formés en BTS SIO option SISR, à travers les trois blocs de compétences du référentiel.</p>
+				<div class="mt-6 grid gap-4 md:grid-cols-3">
+					<div class="border border-white/10 bg-ink/80 p-4">
+						<p class="font-mono text-xs font-bold text-endfield">BLOC 1</p>
+						<h4 class="mt-2 font-display font-bold tracking-wide text-white uppercase">Support et mise à disposition de services informatiques</h4>
+						<p class="mt-2 text-sm leading-6 text-zinc-400">Anticiper les exigences matérielles (mémoire HBM, densité électrique, refroidissement liquide) pour dimensionner les serveurs et garantir la continuité des services.</p>
 					</div>
-					<div class="rounded-lg border border-white/10 bg-ink/50 p-4">
-						<p class="font-mono text-xs text-accent">BLOC 2 · OPTION SISR</p>
-						<h4 class="mt-2 font-semibold text-white">Administration des systèmes et des réseaux</h4>
-						<p class="mt-2 text-sm leading-6 text-slate-400">Comprendre les nouvelles topologies réseau (DPU, UALink, optique CPO) et le déchargement des fonctions réseau, stockage et virtualisation hors du CPU hôte.</p>
+					<div class="border border-white/10 bg-ink/80 p-4">
+						<p class="font-mono text-xs font-bold text-endfield">BLOC 2 · OPTION SISR</p>
+						<h4 class="mt-2 font-display font-bold tracking-wide text-white uppercase">Administration des systèmes et des réseaux</h4>
+						<p class="mt-2 text-sm leading-6 text-zinc-400">Comprendre les nouvelles topologies réseau (DPU, UALink, optique CPO) et le déchargement des fonctions réseau, stockage et virtualisation hors du CPU hôte.</p>
 					</div>
-					<div class="rounded-lg border border-white/10 bg-ink/50 p-4">
-						<p class="font-mono text-xs text-accent">BLOC 3</p>
-						<h4 class="mt-2 font-semibold text-white">Cybersécurité des services informatiques</h4>
-						<p class="mt-2 text-sm leading-6 text-slate-400">Exploiter l’isolation matérielle Zero Trust, le chiffrement et la supervision hors-bande apportés par les DPU pour sécuriser les infrastructures et les flux.</p>
+					<div class="border border-white/10 bg-ink/80 p-4">
+						<p class="font-mono text-xs font-bold text-endfield">BLOC 3</p>
+						<h4 class="mt-2 font-display font-bold tracking-wide text-white uppercase">Cybersécurité des services informatiques</h4>
+						<p class="mt-2 text-sm leading-6 text-zinc-400">Exploiter l’isolation matérielle Zero Trust, le chiffrement et la supervision hors-bande apportés par les DPU pour sécuriser les infrastructures et les flux.</p>
 					</div>
 				</div>
 			</article>
 		</section>
 	</main>
 
-	<footer class="border-t border-white/10 px-6 py-6 text-center text-sm text-slate-500">
-		<p>© <span id="year"></span> Axel Nivore — Portfolio BTS SIO SISR</p>
+	<div class="h-1 w-full hazard-stripe opacity-80" aria-hidden="true"></div>
+	<footer class="bg-ink px-6 py-6 text-center font-mono text-xs tracking-wider text-zinc-500 uppercase">
+		<p>© <span id="year">2026</span> AXEL NIVORE <span class="text-endfield">//</span> PORTFOLIO BTS SIO SISR</p>
 	</footer>
 	<script src="script.js"></script>
 </body>
