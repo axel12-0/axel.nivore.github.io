@@ -34,7 +34,7 @@
 				<a class="transition hover:text-accent" href="#formation">Formation</a>
 				<a class="transition hover:text-accent" href="#parcours">Parcours pro</a>
 				<a class="transition hover:text-accent" href="#contact">Contact</a>
-				<a class="transition hover:text-accent" href="#veille">Veille DPU</a>
+				<a class="transition hover:text-accent" href="#veille">Veille hardware</a>
 			</div>
 			<a href="#contact" class="rounded-lg border border-accent/50 px-4 py-2 text-sm text-accent transition hover:bg-accent hover:text-ink">Me contacter</a>
 		</nav>
@@ -88,7 +88,7 @@
 					<article class="rounded-xl border border-white/10 bg-panel p-6">
 						<p class="font-mono text-xs text-accent">OBJECTIFS</p>
 						<h3 class="mt-3 text-xl font-semibold">Ce que je développe</h3>
-						<p class="mt-3 leading-6 text-slate-400">Renforcer mes compétences en administration d’infrastructures, sécurisation des réseaux et automatisation, tout en assurant une veille technologique active (notamment sur les DPU) en vue de mon stage et d’une insertion professionnelle en systèmes et réseaux.</p>
+						<p class="mt-3 leading-6 text-slate-400">Renforcer mes compétences en administration d’infrastructures, sécurisation des réseaux et automatisation, tout en assurant une veille technologique active sur les évolutions hardware liées à l’IA (dont les DPU) en vue de mon stage et d’une insertion professionnelle en systèmes et réseaux.</p>
 					</article>
 				</div>
 			</div>
@@ -152,27 +152,59 @@
 
 		<section id="veille" class="mx-auto max-w-6xl px-6 py-20">
 			<p class="font-mono text-sm text-accent">06 / Veille technologique</p>
-			<h2 class="mt-3 text-3xl font-bold">Les DPU (Data Processing Units)</h2>
-			<p class="mt-4 max-w-3xl leading-7 text-slate-400">Un DPU est un processeur spécialisé conçu pour prendre en charge certaines tâches d’infrastructure dans les centres de données. Cette veille suit l’évolution de ces unités et de leurs usages, en complément des CPU et GPU.</p>
+			<h2 class="mt-3 text-3xl font-bold">Évolutions hardware liées à l’IA</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-400">L’essor de l’intelligence artificielle transforme en profondeur l’architecture matérielle des serveurs et des centres de données. Cette veille suit les évolutions des accélérateurs, de la mémoire, des interconnexions et du déchargement réseau via les DPU, avec une attention particulière aux impacts sur les infrastructures systèmes et réseaux (SISR).</p>
 			<div class="mt-8 grid gap-5 md:grid-cols-2">
 				<article class="rounded-xl border border-white/10 bg-panel p-6">
 					<h3 class="font-semibold text-white">Périmètre de la veille</h3>
 					<ul class="mt-4 list-disc space-y-2 pl-5 leading-6 text-slate-400">
-						<li>Architecture et fonctions des DPU, notamment le déchargement des tâches réseau, stockage et sécurité.</li>
-						<li>Cas d’usage dans les centres de données, la virtualisation et les infrastructures cloud.</li>
-						<li>Écosystème, solutions et évolutions pertinentes pour l’administration des systèmes et réseaux.</li>
-						<li>Enjeux de sécurité, de performances, de consommation et d’intégration.</li>
+						<li>Évolution des unités de traitement spécialisées (GPU, NPU, ASIC d’inférence) et intégration à l’échelle du rack.</li>
+						<li>Déchargement réseau, stockage et sécurité via les DPU (Data Processing Units) dans les infrastructures IA.</li>
+						<li>Mémoire à large bande passante (HBM) et nouveaux standards d’interconnexion haut débit ou optiques.</li>
+						<li>Contraintes d’exploitation en datacenter : alimentation haute densité, refroidissement liquide et supervision.</li>
 					</ul>
-					<p class="mt-4 text-sm text-slate-500">Hors périmètre : étude exhaustive des CPU et GPU, sauf comparaison pour comprendre le rôle des DPU.</p>
+					<p class="mt-4 text-sm text-slate-500">Hors périmètre : conception mathématique des modèles d’IA et développement algorithmique pur.</p>
 				</article>
 				<article class="rounded-xl border border-white/10 bg-panel p-6">
 					<h3 class="font-semibold text-white">Démarche de veille</h3>
 					<ol class="mt-4 list-decimal space-y-2 pl-5 leading-6 text-slate-400">
-						<li>Consulter régulièrement la documentation technique des fabricants, les publications spécialisées et les ressources d’organismes de standardisation.</li>
-						<li>Vérifier la date, l’auteur, les sources et le contexte de chaque information, puis comparer plusieurs points de vue.</li>
-						<li>Résumer les nouveautés, noter leurs impacts et mettre à jour cette rubrique à chaque période de veille.</li>
+						<li>Suivre la documentation des constructeurs (NVIDIA, AMD, SK hynix, Broadcom), les consortiums techniques (UALink, OCP) et la presse spécialisée.</li>
+						<li>Vérifier la date, la fiabilité des sources et croiser les annonces techniques avant synthèse.</li>
+						<li>Rédiger des fiches thématiques orientées architecture matérielle et impact pour l’administration systèmes et réseaux.</li>
 					</ol>
-					<p class="mt-4 text-sm text-slate-500">Rythme conseillé : une revue mensuelle, avec la date et les sources ajoutées à chaque mise à jour.</p>
+					<p class="mt-4 text-sm text-slate-500">Rythme de suivi : revue mensuelle avec ajout ou actualisation des articles par thématique.</p>
+				</article>
+			</div>
+
+			<h3 class="mt-12 text-xl font-semibold text-white">Articles de veille</h3>
+			<div class="mt-5 grid gap-5 md:grid-cols-2">
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">ARTICLE 01 · DPU &amp; RÉSEAU IA</p>
+					<h4 class="mt-3 text-lg font-semibold text-white">Les DPU (Data Processing Units) : décharger l’infrastructure des clusters IA</h4>
+					<p class="mt-3 leading-6 text-slate-400">Un DPU est un processeur dédié qui prend en charge le réseau, le stockage, la télémétrie et le chiffrement à la place du CPU hôte. Avec les générations récentes comme NVIDIA BlueField-4 (jusqu’à 800 Gb/s avec ConnectX-9), le DPU assure aussi l’isolation matérielle Zero Trust et le partage rapide des caches de contexte (KV cache) sans saturer les nœuds de calcul.</p>
+					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> séparation nette entre calcul applicatif et plan de contrôle réseau/sécurité hors de l’OS hôte.</p>
+					<p class="mt-3 text-xs text-slate-500">Sources : NVIDIA, Red Hat, documentation architecture BlueField (2025–2026).</p>
+				</article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">ARTICLE 02 · MÉMOIRE HAUTE BANDE PASSANTE</p>
+					<h4 class="mt-3 text-lg font-semibold text-white">HBM4 : dépasser le mur de la mémoire pour les modèles d’IA</h4>
+					<p class="mt-3 leading-6 text-slate-400">Pour l’entraînement et l’inférence des grands modèles de langage, la bande passante mémoire devient plus critique que la puissance brute de calcul. La mémoire HBM4 (portée notamment par SK hynix) double la largeur d’interface de 1 024 à 2 048 bits par pile et intègre des puces de base personnalisées afin d’accélérer les échanges tout en maîtrisant la dissipation thermique.</p>
+					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> serveurs IA plus denses nécessitant une gestion fine du dimensionnement mémoire et thermique.</p>
+					<p class="mt-3 text-xs text-slate-500">Sources : SK hynix, TrendForce, publications techniques HBM4 (2025–2026).</p>
+				</article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">ARTICLE 03 · INTERCONNEXIONS &amp; OPTIQUE</p>
+					<h4 class="mt-3 text-lg font-semibold text-white">UALink et Co-Packaged Optics (CPO) face aux limites du cuivre</h4>
+					<p class="mt-3 leading-6 text-slate-400">À des débits multi-térabits par seconde, les liaisons en cuivre atteignent leurs limites physiques sur de très courtes distances. L’écosystème évolue vers des standards ouverts d’interconnexion entre accélérateurs (UALink 1.0 puis 2.0) et vers le Co-Packaged Optics (CPO), qui rapproche l’optique des commutateurs afin de réduire la latence et la consommation énergétique par bit.</p>
+					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> évolution des architectures réseau Scale-Up/Scale-Out et généralisation de la fibre optique haute densité.</p>
+					<p class="mt-3 text-xs text-slate-500">Sources : UALink Consortium, Broadcom, SemiEngineering (2025–2026).</p>
+				</article>
+				<article class="rounded-xl border border-white/10 bg-panel p-6">
+					<p class="font-mono text-xs text-accent">ARTICLE 04 · DATACENTER &amp; ÉNERGIE</p>
+					<h4 class="mt-3 text-lg font-semibold text-white">Racks intégrés IA, alimentation verticale et refroidissement liquide</h4>
+					<p class="mt-3 leading-6 text-slate-400">Le matériel IA passe de cartes individuelles à des baies complètes fortement intégrées (GPU, CPU et ASIC/NPU spécialisés en inférence). Cette concentration électrique impose de nouvelles architectures d’alimentation et le recours au refroidissement liquide direct (Direct Liquid Cooling) pour maintenir la stabilité des clusters en production.</p>
+					<p class="mt-4 text-sm text-slate-300"><span class="font-mono text-xs text-accent">IMPACT SISR :</span> transformation de l’hébergement en salle serveur (PUE, distribution électrique et supervision thermique).</p>
+					<p class="mt-3 text-xs text-slate-500">Sources : Data Center Knowledge, SemiEngineering (2025–2026).</p>
 				</article>
 			</div>
 		</section>
